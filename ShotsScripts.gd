@@ -1,7 +1,7 @@
 extends Label
 
 var shoot_count = 0  # Counter to track shots
-var max_shots = 5    # Maximum shots before reloading
+var max_shots = 30    # Maximum shots before reloading
 
 # Called when the node enters the scene tree for the first time
 func _ready():
