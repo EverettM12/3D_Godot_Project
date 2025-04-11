@@ -1,12 +1,13 @@
+# ================= MAIN SCENE SCRIPT =================
 extends Node3D
-
-@onready var pause_menu: Control = $pause_menu
-@onready var quit: Button = $pause_menu/Quit
-
+# ================= VARIABLES =================
+@onready var pause_menu: Control = $HUD/pause_menu
+@onready var quit: Button = $HUD/pause_menu/Quit
 var paused = false
-
+# ================= PAUSE =================
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		_pause_menu()
 
 func _pause_menu():
@@ -22,8 +23,7 @@ func _pause_menu():
 		Engine.time_scale = 0
 		
 	paused = !paused
-
-
+# ================= QUIT =================
 func _on_quit_pressed() -> void:
 	print("Button Pressed")
 	get_tree().quit()
